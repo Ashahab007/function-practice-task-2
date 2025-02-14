@@ -120,3 +120,48 @@ function findAveragePhonePrice(products) {
 
 const averagePrice = findAveragePhonePrice(phones);
 console.log("The average price of all the phone is: ", Math.ceil(averagePrice));
+
+//! Task -5: (Hard)
+/* 
+For each employee their current salary is calculated by multiplying yearly increment with experience then adding the result with the starting salary. Now calculate the total salary has to be provided by the company in a month.
+
+ const employees = [
+            { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+            { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+            { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+            { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+        ];
+        */
+const employees = [
+  { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+  { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+  { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+  { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+];
+
+function getSalaryOfEmp(array) {
+  for (const employee of array) {
+    let eachEmpSalary =
+      employee.increment * employee.experience + employee.starting;
+    employee.salary = eachEmpSalary;
+    // console.log(employee);
+  }
+  return array;
+}
+
+let calculateSalary = getSalaryOfEmp(employees);
+// console.log(calculateSalary);
+
+function providedTotalSalary(updateSalary) {
+  let total = 0;
+  for (const empSalary of updateSalary) {
+    total = total + empSalary.salary;
+  }
+  return total;
+}
+let salaryProvide = providedTotalSalary(calculateSalary);
+console.log(
+  `The total salary has to be provided by the company in a month is ${salaryProvide} tk.`
+);
+
+// todo: Pending from lecture 1. layered discount calculator. 2. Calculator using function and calculate the result in another function
