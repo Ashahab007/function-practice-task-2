@@ -159,6 +159,7 @@ function providedTotalSalary(updateSalary) {
   }
   return total;
 }
+
 let salaryProvide = providedTotalSalary(calculateSalary);
 console.log(
   `The total salary has to be provided by the company in a month is ${salaryProvide} tk.`
