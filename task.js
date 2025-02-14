@@ -52,7 +52,6 @@ function findSmallName(arr) {
         smallestName.length,
         friendName[i].length,
       ];
-      //   smallestName.length = friendName[i].length;
       smallestName = friendName[i];
     }
   }
@@ -63,3 +62,26 @@ function findSmallName(arr) {
 }
 
 findSmallName(friendName);
+
+//! Task-3:
+/* 
+Your task is to calculate the total budget required to buy electronics:
+
+    laptop = 35000 tk
+    tablet = 15000 tk
+    mobile = 20000 tk
+    
+    Write a JavaScript function named calculateElectronicsBudget that takes in the number of laptop, tablets, and mobile and returns the total money required.
+    */
+let laptop = 35000;
+let tablet = 15000;
+let mobile = 20000;
+
+function calculateElectronicsBudget(quantityLap, quantityTab, quantityMob) {
+  let total =
+    laptop * quantityLap + tablet * quantityTab + mobile * quantityMob;
+  return `Total budget required for laptop, tablet & mobile is ${total}`;
+}
+
+let total = calculateElectronicsBudget(2, 3, 1);
+console.log(total);
